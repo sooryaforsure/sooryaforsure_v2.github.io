@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=JetBrains+Mono:wght@300;400;500&display=swap');
+@import 'tailwindcss';
+
+html, body, #root {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #060608;
+  color: #f0ede8;
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(245,158,11,0.3); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(245,158,11,0.6); }
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes marquee-fwd {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-rev {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+@keyframes float-y {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
+}
+@keyframes skill-card-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-5px) rotate(0.4deg); }
+  66%       { transform: translateY(-2px) rotate(-0.3deg); }
+}
+@keyframes skill-glow-pulse {
+  0%, 100% { box-shadow: 0 0 0px transparent; }
+  50%       { box-shadow: 0 0 24px var(--glow-color, #f59e0b44); }
+}
+@keyframes shimmer-sweep {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+@keyframes border-spin {
+  from { --angle: 0deg; }
+  to   { --angle: 360deg; }
+}
+@keyframes pop-in {
+  0%   { opacity: 0; transform: scale(0.75) translateY(10px); }
+  60%  { opacity: 1; transform: scale(1.06) translateY(-2px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes pill-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(245,158,11,0.2); }
+  50%       { box-shadow: 0 0 20px rgba(245,158,11,0.4), 0 0 40px rgba(245,158,11,0.1); }
+}
+
+.skill-card-float { animation: skill-card-float var(--float-dur, 4s) ease-in-out infinite; }
+.skill-pill-active { animation: pill-glow 2.5s ease-in-out infinite; }
+.pop-in { animation: pop-in 0.45s cubic-bezier(0.34,1.56,0.64,1) both; }
+@keyframes blob-drift {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(30px, -20px) scale(1.05); }
+  66%  { transform: translate(-20px, 15px) scale(0.97); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+.marquee-fwd  { animation: marquee-fwd  var(--marquee-dur, 30s) linear infinite; }
+.marquee-rev  { animation: marquee-rev  var(--marquee-dur, 30s) linear infinite; }
+.marquee-wrap:hover .marquee-fwd,
+.marquee-wrap:hover .marquee-rev { animation-play-state: paused; }
+
+.skill-logo-card {
+  transition: transform 0.35s cubic-bezier(0.34,1.56,0.64,1),
+              border-color 0.3s ease,
+              box-shadow 0.3s ease,
+              background 0.3s ease;
+}
+.skill-logo-card:hover {
+  transform: translateY(-6px) scale(1.14);
+  animation: skill-glow-pulse 1.4s ease-in-out infinite;
+}
+
+.blob { animation: blob-drift 14s ease-in-out infinite; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+.fade-up {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.ticker-track {
+  animation: ticker 28s linear infinite;
+}
+
+.slow-zoom {
+  animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Scroll reveal base states */
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-48px);
+  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(48px);
+  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal-left.revealed,
+.reveal-right.revealed,
+.reveal-up.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger: parent gets .revealed, children animate in sequence */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.stagger.revealed > *:nth-child(1) { opacity: 1; transform: none; transition-delay: 0s; }
+.stagger.revealed > *:nth-child(2) { opacity: 1; transform: none; transition-delay: 0.07s; }
+.stagger.revealed > *:nth-child(3) { opacity: 1; transform: none; transition-delay: 0.14s; }
+.stagger.revealed > *:nth-child(4) { opacity: 1; transform: none; transition-delay: 0.21s; }
+.stagger.revealed > *:nth-child(5) { opacity: 1; transform: none; transition-delay: 0.28s; }
+.stagger.revealed > *:nth-child(6) { opacity: 1; transform: none; transition-delay: 0.35s; }
+.stagger.revealed > *:nth-child(n+7) { opacity: 1; transform: none; transition-delay: 0.42s; }
