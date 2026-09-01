@@ -124,8 +124,8 @@ export default function Hero() {
                   for (let j = 0; j <= idx; j++) used += CODE_LINES[j].text.length;
                   return typed < used;
                 }) && (
-                  <span className="inline-block w-[2px] h-[14px] bg-[#f59e0b] align-middle ml-[1px] pulse-glow" />
-                )}
+                    <span className="inline-block w-[2px] h-[14px] bg-[#f59e0b] align-middle ml-[1px] pulse-glow" />
+                  )}
               </div>
             ))}
           </div>
@@ -181,7 +181,7 @@ export default function Hero() {
             animationDelay: "0.45s",
           }}
         >
-          Sooryathej K L
+          Sooryathej <br /> K L
         </h1>
 
         <div className="fade-up mt-8 mb-8 w-px h-10 bg-[#f59e0b]/25 md:self-start" style={{ animationDelay: "0.65s" }} />
