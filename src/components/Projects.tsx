@@ -4,6 +4,7 @@ import guessmeImg from "../assets/projects/guessme.jpg";
 import snakeImg from "../assets/projects/snake.jpg";
 import pf1Img from "../assets/projects/pf1.jpg";
 import pf2Img from "../assets/projects/pf2.jpg";
+import churchImg from "../assets/projects/church.jpg";
 
 const PROJECTS = [
   {
@@ -16,7 +17,7 @@ const PROJECTS = [
     link2: "https://github.com/sooryaforsure/parishioner",
     color: "#1a2a1a",
     accent: "#4ade80",
-    media: null as string | null
+    media: churchImg
   },
   {
     number: "02",
