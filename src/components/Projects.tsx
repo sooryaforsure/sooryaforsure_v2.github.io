@@ -185,13 +185,13 @@ export default function Projects() {
             >
               {/* Card */}
               <div
-                className="w-full max-w-5xl rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2"
+                className="w-full max-w-5xl rounded-2xl overflow-y-auto overflow-x-hidden grid grid-cols-1 md:grid-cols-2"
                 style={{
                   background: project.color,
                   border: `1px solid ${project.accent}18`,
                   boxShadow: `0 0 80px ${project.accent}08, 0 32px 80px rgba(0,0,0,0.5)`,
                   minHeight: "520px",
-                  maxHeight: "75vh",
+                  maxHeight: "85vh",
                 }}
               >
                 {/* Left — project info */}
