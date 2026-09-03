@@ -3,7 +3,7 @@ import duckImg from "../assets/projects/duck2.jpg";
 import guessmeImg from "../assets/projects/guessme.jpg";
 import snakeImg from "../assets/projects/snake.jpg";
 import pf1Img from "../assets/projects/pf1.jpg";
-import pf2Img from "../assets/projects/pf2.png";
+import pf2Video from "../assets/projects/pf2.mp4";
 
 const PROJECTS = [
   {
@@ -76,7 +76,7 @@ const PROJECTS = [
     link2: null,
     color: "#0b0f19",
     accent: "#38bdf8",
-    media: pf2Img,
+    media: pf2Video,
   },
 ];
 
