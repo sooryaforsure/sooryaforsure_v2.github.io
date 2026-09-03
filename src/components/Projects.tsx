@@ -301,7 +301,7 @@ export default function Projects() {
                       <img
                         src={project.media}
                         alt={`${project.title} preview`}
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full ${project.number === "03" || project.number === "04" ? "object-contain p-4" : "object-cover"}`}
                       />
                     )
                   ) : (
