@@ -1,4 +1,8 @@
 import { useEffect, useRef } from "react";
+import duckImg from "../assets/projects/duck2.jpg";
+import guessmeImg from "../assets/projects/guessme.jpg";
+import snakeImg from "../assets/projects/snake.jpg";
+import pf1Img from "../assets/projects/pf1.jpg";
 
 const PROJECTS = [
   {
@@ -11,7 +15,7 @@ const PROJECTS = [
     link2: "https://github.com/sooryaforsure/parishioner",
     color: "#1a2a1a",
     accent: "#4ade80",
-    media: null as string | null,
+    media: null as string | null
   },
   {
     number: "02",
@@ -23,7 +27,7 @@ const PROJECTS = [
     link2: null,
     color: "#1a1a2a",
     accent: "#818cf8",
-    media: null as string | null,
+    media: duckImg,
   },
   {
     number: "03",
@@ -33,9 +37,9 @@ const PROJECTS = [
     stack: ["Flutter", "Dart", "shared_preferences", "flutter_animate"],
     link: "https://github.com/sooryaforsure/guessMe",
     link2: null,
-    color: "#1a1510",
+    color: "#230432",
     accent: "#fb923c",
-    media: null as string | null,
+    media: guessmeImg,
   },
   {
     number: "04",
@@ -47,7 +51,7 @@ const PROJECTS = [
     link2: null,
     color: "#0f1a0f",
     accent: "#34d399",
-    media: null as string | null,
+    media: snakeImg,
   },
   {
     number: "05",
@@ -59,7 +63,7 @@ const PROJECTS = [
     link2: null,
     color: "#1a1218",
     accent: "#f472b6",
-    media: null as string | null,
+    media: pf1Img,
   },
 ];
 
