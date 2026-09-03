@@ -3,6 +3,7 @@ import duckImg from "../assets/projects/duck2.jpg";
 import guessmeImg from "../assets/projects/guessme.jpg";
 import snakeImg from "../assets/projects/snake.jpg";
 import pf1Img from "../assets/projects/pf1.jpg";
+import pf2Img from "../assets/projects/pf2.png";
 
 const PROJECTS = [
   {
@@ -64,6 +65,18 @@ const PROJECTS = [
     color: "#1a1218",
     accent: "#f472b6",
     media: pf1Img,
+  },
+  {
+    number: "06",
+    title: "Portfolio V2 (This Site)",
+    description:
+      "A modern, responsive personal portfolio website featuring a cinematic design, smooth horizontal scroll animations, and interactive elements.",
+    stack: ["React", "Vite", "Tailwind CSS"],
+    link: "https://github.com/sooryaforsure/sooryaforsure_v2.github.io",
+    link2: null,
+    color: "#0b0f19",
+    accent: "#38bdf8",
+    media: pf2Img,
   },
 ];
 
@@ -301,7 +314,7 @@ export default function Projects() {
                       <img
                         src={project.media}
                         alt={`${project.title} preview`}
-                        className={`w-full h-full ${project.number === "03" || project.number === "04" ? "object-contain p-4" : "object-cover"}`}
+                        className="w-full h-full object-cover"
                       />
                     )
                   ) : (
