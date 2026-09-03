@@ -185,7 +185,7 @@ export default function Projects() {
             >
               {/* Card */}
               <div
-                className="w-full max-w-5xl rounded-2xl overflow-y-auto overflow-x-hidden grid grid-cols-1 md:grid-cols-2"
+                className="w-full max-w-5xl rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-2"
                 style={{
                   background: project.color,
                   border: `1px solid ${project.accent}18`,
@@ -195,7 +195,7 @@ export default function Projects() {
                 }}
               >
                 {/* Left — project info */}
-                <div className="flex flex-col justify-between p-8 md:p-10">
+                <div className="flex flex-col justify-between p-6 md:p-10">
                   <div>
                     <span
                       className="text-[9px] tracking-[0.3em] uppercase"
@@ -284,7 +284,7 @@ export default function Projects() {
 
                 {/* Right — media panel */}
                 <div
-                  className="relative flex items-center justify-center overflow-hidden"
+                  className="relative flex items-center justify-center overflow-hidden h-48 md:h-auto"
                   style={{ background: `${project.accent}08`, borderLeft: `1px solid ${project.accent}12` }}
                 >
                   {project.media ? (
